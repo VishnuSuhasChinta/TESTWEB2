@@ -158,4 +158,112 @@ header{
 }
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,0.15);}
 .btn-outline{
-  height:5
+  height:50px;padding:0 24px;
+  border:1px solid rgba(0,0,0,0.1);
+  background:transparent;
+  color:var(--text-dark);
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .25s ease;
+}
+.btn-outline:hover{background:rgba(255,255,255,0.4);}
+.micro{font-size:13px;color:var(--text-mid);margin-top:12px;}
+
+/* Right side services box */
+.hero-right{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.services-card{
+  width:500px;max-width:100%;
+  background:rgba(255,255,255,0.5);
+  backdrop-filter:blur(18px);
+  border-radius:16px;
+  box-shadow:0 30px 60px rgba(0,0,0,0.1);
+  padding:30px;
+  display:flex;flex-direction:column;gap:18px;
+  border:1px solid rgba(255,255,255,0.5);
+}
+.service{
+  padding:16px 20px;
+  border-radius:12px;
+  background:linear-gradient(135deg,rgba(255,255,255,0.9),rgba(255,255,255,0.75));
+  color:var(--text-dark);
+  font-weight:600;
+  font-size:16px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:all .25s ease;
+}
+.service:hover{
+  background:linear-gradient(135deg,rgba(255,255,255,1),rgba(245,248,250,0.9));
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
+}
+.service span{
+  font-size:13px;
+  color:var(--text-mid);
+  font-weight:400;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;}
+  .headline{font-size:40px;}
+  .sub{font-size:15px;}
+  .services-card{width:100%;padding:24px;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-overlay"></div>
+<div class="bg-accent"></div>
+<div class="film-grain"></div>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">Priya Sharma, LMFT</div>
+    <nav class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="#sessions">Sessions</a>
+      <a href="#contact">Contact</a>
+      <button class="cta-pill">Book a Session</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="hero-left">
+      <div class="eyebrow">Licensed Marriage & Family Therapist</div>
+
+      <h1 class="headline">Gentle clarity for complex lives.</h1>
+
+      <p class="sub">I work with individuals and couples who want to move through anxiety, burnout, and disconnection — toward a steadier, more meaningful rhythm of living.</p>
+
+      <div class="cta-row">
+        <button class="btn-primary">Book a Consultation</button>
+        <button class="btn-outline">Learn More</button>
+      </div>
+
+      <div class="micro">Virtual & in-person sessions available</div>
+    </div>
+
+    <div class="hero-right">
+      <div class="services-card">
+        <div class="service">Individual Therapy <span>For personal growth</span></div>
+        <div class="service">Couples Counseling <span>For deeper connection</span></div>
+        <div class="service">Online / Telehealth <span>From anywhere</span></div>
+        <div class="service">Group Sessions <span>Shared healing space</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
