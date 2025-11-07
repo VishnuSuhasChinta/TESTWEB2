@@ -10,207 +10,205 @@
 
 <style>
 :root{
-  --bg-top: #E0F4FF; /* Changed to a lighter, clearer sky blue */
-  --bg-bottom: #B5DCEF; /* Changed to a more visible mid-tone blue */
-  --accent-blue: #4A90C3; /* Changed to a clearer, more vibrant blue */
-  --accent-peach: #F2B5A7;
-  --accent-soft: #70A6CC; /* Changed to a more visible soft blue */
-  --text-dark: #1F2A36;
-  --text-mid: #4F5B6A;
-  --max-width: 1200px;
+  --bg-top: #EEF3F7;
+  --bg-bottom: #CFE2EB;
+  --accent-blue: #7BB5D8;
+  --accent-peach: #F2B5A7;
+  --accent-soft: #A9C9D8;
+  --text-dark: #1F2A36;
+  --text-mid: #4F5B6A;
+  --max-width: 1200px;
 }
 
 /* Basic reset */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{
-  font-family:Inter,system-ui,sans-serif;
-  background:linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
-  color:var(--text-dark);
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-  position:relative;
+  font-family:Inter,system-ui,sans-serif;
+  background:linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
+  color:var(--text-dark);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  position:relative;
 }
 
 /* Background layers */
 .bg-overlay{
-  position:absolute;
-  inset:0;
-  z-index:0;
-  /* Updated hardcoded colors (EEF3F7 -> 224,244,255) and (CFE2EB -> 181,220,239) */
-  background: radial-gradient(circle at 40% 20%, rgba(255,255,255,0.7), rgba(224,244,255,0.9) 30%, rgba(181,220,239,1) 70%);
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background: radial-gradient(circle at 40% 20%, rgba(255,255,255,0.7), rgba(238,243,247,0.9) 30%, rgba(207,226,235,1) 70%);
 }
-  
+  
 .bg-accent{
-  position:absolute;
-  inset:0;
-  /* Updated hardcoded blue color (162,211,255 -> 74, 144, 195) based on the new accent blue */
- background: radial-gradient(ellipse at 70% 80%, rgba(255,220,200,0.35), rgba(255,255,255,0) 70%), radial-gradient(ellipse at 20% 90%, rgba(74, 144, 195, 0.25), rgba(255,255,255,0) 70%);
+  position:absolute;
+  inset:0;
+ background: radial-gradient(ellipse at 70% 80%, rgba(255,220,200,0.35), rgba(255,255,255,0) 70%), radial-gradient(ellipse at 20% 90%, rgba(162,211,255,0.25), rgba(255,255,255,0) 70%);
 
-  z-index:1;
-  mix-blend-mode:soft-light;
+  z-index:1;
+  mix-blend-mode:soft-light;
 }
 
 
 /* Navbar */
 header{
-  position:fixed;
-  top:0;left:0;right:0;
-  height:72px;
-  backdrop-filter:blur(10px) saturate(1.1);
-  -webkit-backdrop-filter:blur(10px);
-  background:rgba(255,255,255,0.55);
-  box-shadow:0 1px 12px rgba(0,0,0,0.04);
-  display:flex;align-items:center;justify-content:center;
-  z-index:20;
+  position:fixed;
+  top:0;left:0;right:0;
+  height:72px;
+  backdrop-filter:blur(10px) saturate(1.1);
+  -webkit-backdrop-filter:blur(10px);
+  background:rgba(255,255,255,0.55);
+  box-shadow:0 1px 12px rgba(0,0,0,0.04);
+  display:flex;align-items:center;justify-content:center;
+  z-index:20;
 }
 .nav-inner{
-  width:100%;max-width:var(--max-width);
-  padding:0 24px;
-  display:flex;align-items:center;justify-content:space-between;
+  width:100%;max-width:var(--max-width);
+  padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;
 }
 .brand{
-  font-family:"Playfair Display",serif;
-  font-weight:700;
-  font-size:20px;
-  color:var(--text-dark);
+  font-family:"Playfair Display",serif;
+  font-weight:700;
+  font-size:20px;
+  color:var(--text-dark);
 }
 .nav-links{display:flex;align-items:center;gap:24px;}
 .nav-links a{
-  text-decoration:none;
-  color:var(--text-mid);
-  font-size:14px;
+  text-decoration:none;
+  color:var(--text-mid);
+  font-size:14px;
 }
 .nav-links a:hover{color:var(--text-dark);}
 .cta-pill{
-  padding:10px 18px;
-  border-radius:999px;
-  border:1px solid rgba(0,0,0,0.1);
-  background:white;
-  color:var(--text-dark);
-  font-weight:600;
-  cursor:pointer;
-  box-shadow:0 4px 16px rgba(0,0,0,0.05);
-  transition:all .25s ease;
+  padding:10px 18px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,0.1);
+  background:white;
+  color:var(--text-dark);
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 4px 16px rgba(0,0,0,0.05);
+  transition:all .25s ease;
 }
 .cta-pill:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
 }
 
 /* Hero layout */
 .hero{
-  position:relative;
-  z-index:10;
-  padding:calc(72px + 60px) 24px 120px;
-  min-height:100vh;
-  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  z-index:10;
+  padding:calc(72px + 60px) 24px 120px;
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
 }
 .hero-inner{
-  width:100%;
-  max-width:var(--max-width);
-  display:grid;
-  grid-template-columns:56% 44%;
-  gap:60px;
-  align-items:center;
+  width:100%;
+  max-width:var(--max-width);
+  display:grid;
+  grid-template-columns:56% 44%;
+  gap:60px;
+  align-items:center;
 }
 
 /* Left side */
 .hero-left{
-  position:relative;
+  position:relative;
 }
 .eyebrow{
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  color:var(--text-mid);
-  font-size:13px;
-  font-weight:500;
-  margin-bottom:16px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--text-mid);
+  font-size:13px;
+  font-weight:500;
+  margin-bottom:16px;
 }
 .headline{
-  font-family:"Playfair Display",serif;
-  font-weight:700;
-  font-size:58px;
-  line-height:1.05;
-  color:var(--text-dark);
-  margin-bottom:18px;
+  font-family:"Playfair Display",serif;
+  font-weight:700;
+  font-size:58px;
+  line-height:1.05;
+  color:var(--text-dark);
+  margin-bottom:18px;
 }
 .sub{
-  font-size:17px;
-  color:var(--text-mid);
-  max-width:540px;
-  margin-bottom:32px;
+  font-size:17px;
+  color:var(--text-mid);
+  max-width:540px;
+  margin-bottom:32px;
 }
 .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
 .btn-primary{
-  background:linear-gradient(90deg,var(--accent-blue),var(--accent-peach));
-  color:white;
-  border:none;border-radius:12px;
-  height:50px;
-  padding:0 26px;
-  font-weight:600;
-  cursor:pointer;
-  transition:all .25s ease;
-  box-shadow:0 12px 30px rgba(0,0,0,0.12);
+  background:linear-gradient(90deg,var(--accent-blue),var(--accent-peach));
+  color:white;
+  border:none;border-radius:12px;
+  height:50px;
+  padding:0 26px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .25s ease;
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
 }
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,0.15);}
 .btn-outline{
-  height:50px;padding:0 24px;
-  border:1px solid rgba(0,0,0,0.1);
-  background:transparent;
-  color:var(--text-dark);
-  border-radius:12px;
-  font-weight:600;
-  cursor:pointer;
-  transition:all .25s ease;
+  height:50px;padding:0 24px;
+  border:1px solid rgba(0,0,0,0.1);
+  background:transparent;
+  color:var(--text-dark);
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .25s ease;
 }
 .btn-outline:hover{background:rgba(255,255,255,0.4);}
 .micro{font-size:13px;color:var(--text-mid);margin-top:12px;}
 
 /* Right side services box */
 .hero-right{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .services-card{
-  width:500px;max-width:100%;
-  background:rgba(255,255,255,0.5);
-  backdrop-filter:blur(18px);
-  border-radius:16px;
-  box-shadow:0 30px 60px rgba(0,0,0,0.1);
-  padding:30px;
-  display:flex;flex-direction:column;gap:18px;
-  border:1px solid rgba(255,255,255,0.5);
+  width:500px;max-width:100%;
+  background:rgba(255,255,255,0.5);
+  backdrop-filter:blur(18px);
+  border-radius:16px;
+  box-shadow:0 30px 60px rgba(0,0,0,0.1);
+  padding:30px;
+  display:flex;flex-direction:column;gap:18px;
+  border:1px solid rgba(255,255,255,0.5);
 }
 .service{
-  padding:16px 20px;
-  border-radius:12px;
-  background:linear-gradient(135deg,rgba(255,255,255,0.9),rgba(255,255,255,0.75));
-  color:var(--text-dark);
-  font-weight:600;
-  font-size:16px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.05);
-  display:flex;align-items:center;justify-content:space-between;
-  transition:all .25s ease;
+  padding:16px 20px;
+  border-radius:12px;
+  background:linear-gradient(135deg,rgba(255,255,255,0.9),rgba(255,255,255,0.75));
+  color:var(--text-dark);
+  font-weight:600;
+  font-size:16px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:all .25s ease;
 }
 .service:hover{
-  background:linear-gradient(135deg,rgba(255,255,255,1),rgba(245,248,250,0.9));
-  transform:translateY(-3px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.07);
+  background:linear-gradient(135deg,rgba(255,255,255,1),rgba(245,248,250,0.9));
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
 }
 .service span{
-  font-size:13px;
-  color:var(--text-mid);
-  font-weight:400;
+  font-size:13px;
+  color:var(--text-mid);
+  font-weight:400;
 }
 
 /* Responsive */
 @media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;gap:40px;}
-  .headline{font-size:40px;}
-  .sub{font-size:15px;}
-  .services-card{width:100%;padding:24px;}
+  .hero-inner{grid-template-columns:1fr;gap:40px;}
+  .headline{font-size:40px;}
+  .sub{font-size:15px;}
+  .services-card{width:100%;padding:24px;}
 }
 </style>
 </head>
@@ -221,45 +219,45 @@ header{
 <div class="film-grain"></div>
 
 <header>
-  <div class="nav-inner">
-    <div class="brand">Priya Sharma, LMFT</div>
-    <nav class="nav-links">
-      <a href="#approach">Approach</a>
-      <a href="#sessions">Sessions</a>
-      <a href="#contact">Contact</a>
-      <button class="cta-pill">Book a Session</button>
-    </nav>
-  </div>
+  <div class="nav-inner">
+    <div class="brand">Priya Sharma, LMFT</div>
+    <nav class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="#sessions">Sessions</a>
+      <a href="#contact">Contact</a>
+      <button class="cta-pill">Book a Session</button>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-  <div class="hero-inner">
+  <div class="hero-inner">
 
-    <div class="hero-left">
-      <div class="eyebrow">Licensed Marriage & Family Therapist</div>
+    <div class="hero-left">
+      <div class="eyebrow">Licensed Marriage & Family Therapist</div>
 
-      <h1 class="headline">Gentle clarity for complex lives.</h1>
+      <h1 class="headline">Gentle clarity for complex lives.</h1>
 
-      <p class="sub">I work with individuals and couples who want to move through anxiety, burnout, and disconnection — toward a steadier, more meaningful rhythm of living.</p>
+      <p class="sub">I work with individuals and couples who want to move through anxiety, burnout, and disconnection — toward a steadier, more meaningful rhythm of living.</p>
 
-      <div class="cta-row">
-        <button class="btn-primary">Book a Consultation</button>
-        <button class="btn-outline">Learn More</button>
-      </div>
+      <div class="cta-row">
+        <button class="btn-primary">Book a Consultation</button>
+        <button class="btn-outline">Learn More</button>
+      </div>
 
-      <div class="micro">Virtual & in-person sessions available</div>
-    </div>
+      <div class="micro">Virtual & in-person sessions available</div>
+    </div>
 
-    <div class="hero-right">
-      <div class="services-card">
-        <div class="service">Individual Therapy <span>For personal growth</span></div>
-        <div class="service">Couples Counseling <span>For deeper connection</span></div>
-        <div class="service">Online / Telehealth <span>From anywhere</span></div>
-        <div class="service">Group Sessions <span>Shared healing space</span></div>
-      </div>
-    </div>
+    <div class="hero-right">
+      <div class="services-card">
+        <div class="service">Individual Therapy <span>For personal growth</span></div>
+        <div class="service">Couples Counseling <span>For deeper connection</span></div>
+        <div class="service">Online / Telehealth <span>From anywhere</span></div>
+        <div class="service">Group Sessions <span>Shared healing space</span></div>
+      </div>
+    </div>
 
-  </div>
+  </div>
 </section>
 
 </body>
