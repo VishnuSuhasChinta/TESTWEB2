@@ -37,13 +37,35 @@ body{
   position:absolute;
   inset:0;
   z-index:0;
-  background: radial-gradient(circle at 40% 20%, rgba(255,255,255,0.7), rgba(238,243,247,0.9) 30%, rgba(207,226,235,1) 70%);
+  background:
+  radial-gradient(
+    circle at 40% 20%,
+    rgba(255, 255, 255, 0.92) 0%,      /* bright center */
+    rgba(235, 242, 248, 0.95) 35%,     /* soft neutral blue-gray */
+    rgba(210, 228, 240, 1) 70%         /* light steel blue edge */
+  );
+
 }
 .bg-accent{
   position:absolute;
   inset:0;
-  background: radial-gradient(ellipse at 70% 80%, rgba(255,220,200,0.35), rgba(255,255,255,0) 70%),
-              radial-gradient(ellipse at 20% 90%, rgba(162,211,255,0.25), rgba(255,255,255,0) 70%);
+ background:
+  radial-gradient(
+    ellipse at 70% 80%,
+    rgba(255, 205, 180, 0.55) 0%,      /* visible warm peach glow */
+    rgba(255, 255, 255, 0) 70%
+  ),
+  radial-gradient(
+    ellipse at 20% 90%,
+    rgba(160, 200, 255, 0.45) 0%,      /* gentle cool blue haze */
+    rgba(255, 255, 255, 0) 70%
+  ),
+  radial-gradient(
+    ellipse at 60% 30%,
+    rgba(195, 220, 255, 0.35) 0%,      /* soft lavender-blue top accent */
+    rgba(255, 255, 255, 0) 70%
+  );
+
   z-index:1;
   mix-blend-mode:soft-light;
 }
